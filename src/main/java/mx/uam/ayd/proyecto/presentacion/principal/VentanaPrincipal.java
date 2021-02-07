@@ -151,7 +151,17 @@ public class VentanaPrincipal {
 		
 		JButton ClientesFrec = new JButton("Clientes Frecuentes");
 		vistasGridLay.add(ClientesFrec);
+		
+		JButton Menus = new JButton("Menus");
+		Menus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarMenu();
+			}
+		});
+		vistasGridLay.add(Menus);
 	}
+	
+	
 	
 	/**
 	 * Actualiza el controlador de esta ventana y la muestra.
