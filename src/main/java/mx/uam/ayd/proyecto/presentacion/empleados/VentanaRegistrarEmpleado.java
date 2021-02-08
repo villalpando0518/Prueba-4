@@ -71,12 +71,12 @@ public class VentanaRegistrarEmpleado extends JDialog {
 		contentPanel.add(lblNewLabel_4);
 		
 		textnombre = new JTextField();
-		textnombre.setBounds(190, 33, 136, 20);
+		textnombre.setBounds(190, 93, 136, 20);
 		contentPanel.add(textnombre);
 		textnombre.setColumns(10);
 		
 		textapellidos = new JTextField();
-		textapellidos.setBounds(190, 63, 136, 20);
+		textapellidos.setBounds(190, 123, 136, 20);
 		contentPanel.add(textapellidos);
 		textapellidos.setColumns(10);
 		
