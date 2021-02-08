@@ -136,7 +136,7 @@ public class VentanaPrincipal {
 		//Empleados.setIcon(new ImageIcon("iconos/Empleado.png"));
 		Empleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				control.agregarEmpleado();
+				control.Empleados();
 			}
 		});
 		vistasGridLay.add(Empleados);

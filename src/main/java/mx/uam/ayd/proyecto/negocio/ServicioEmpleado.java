@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import mx.uam.ayd.proyecto.datos.EmpleadoRepository;
 import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
+import mx.uam.ayd.proyecto.negocio.modelo.Producto;
 
 @Service
 public class ServicioEmpleado {
@@ -29,9 +30,7 @@ public class ServicioEmpleado {
 	public Empleado crea(String nombreEmp, String apellidos, int edad, double sueldo, String ocupacion){
 		
 		Empleado empleado = empleadoRepository.findBynombreEmp(nombreEmp);
-		/*if(producto!=null) {
-			throw new IllegalArgumentException("Este producto ya existe");
-		}*/
+		
 		empleado = new Empleado(nombreEmp, apellidos, edad, sueldo, ocupacion);
 		empleadoRepository.save(empleado);
 		
@@ -41,5 +40,23 @@ public class ServicioEmpleado {
 	public void Guardar(Empleado empleado) {
 		empleadoRepository.save(empleado);
  }
+	
+	public void editarEmpleado(String nombre, int idEmpleado, String apellidos, int edad, double sueldo, String ocupacion) {
+		Empleado emp = empleadoRepository.findByidEmp(idEmpleado);
+		
+		if(emp == null) {
+			throw new IllegalArgumentException("Este empleado no existe");
+		}
+		
+		emp.setNombre(nombre);
+		emp.setApellidos(apellidos);
+		emp.setEdad(edad);
+		emp.setSueldo(sueldo);
+		emp.setOcupacion(ocupacion);
+		
+		
+		empleadoRepository.save(emp);
+	}
+	
 	
 }
