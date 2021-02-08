@@ -152,6 +152,17 @@ public class VentanaPrincipal {
 		});
 		vistasGridLay.add(Recordatorios);
 		
+		JButton ClientesFrec = new JButton("Clientes Frecuentes");
+		vistasGridLay.add(ClientesFrec);
+		
+		JButton Menus = new JButton("Menus");
+		Menus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarMenu();
+			}
+		});
+		vistasGridLay.add(Menus);
+
 		JButton Clientes = new JButton("Registrar Cliente");
 		Clientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -161,6 +172,8 @@ public class VentanaPrincipal {
 				);
 		vistasGridLay.add(Clientes);
 	}
+	
+	
 	
 	/**
 	 * Actualiza el controlador de esta ventana y la muestra.

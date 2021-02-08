@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
+import mx.uam.ayd.proyecto.datos.MenuRepository;
 import mx.uam.ayd.proyecto.datos.OrdenRepository;
 import mx.uam.ayd.proyecto.datos.ProductoRepository;
 import mx.uam.ayd.proyecto.datos.RecordatorioRepository;
+import mx.uam.ayd.proyecto.negocio.modelo.Menu;
 import mx.uam.ayd.proyecto.negocio.modelo.Orden;
 import mx.uam.ayd.proyecto.negocio.modelo.Producto;
 import mx.uam.ayd.proyecto.negocio.modelo.Recordatorio;
@@ -36,6 +38,10 @@ public class ProyectoApplication {
 	
 	@Autowired 
 	RecordatorioRepository recordatorioRepository;
+	
+	@Autowired 
+	MenuRepository menuRepository;
+	
 	
 	/**
 	 * Funcion principal
@@ -139,5 +145,21 @@ public class ProyectoApplication {
 				+ "registrarse.");
 		recordatorioRepository.save(recordatorio);
 		
+		//Registro de menú
+		
+		Menu menu = new Menu();
+		menu.setId(1);
+		menu.setMen("Sopa \n"
+				+ "Consome\n"
+				+ "Arroz\n"
+				+ "Pasta\n"
+				+ "Chile relleno \n"
+				+ "Taco Azteca \n"
+				+ "Filete de Pescado empanizado"
+		        + "Enchiladas\n"
+		        + "Gelatina\n"
+		        + "Flan\n");
+		
+		menuRepository.save(menu);
 	}
 }

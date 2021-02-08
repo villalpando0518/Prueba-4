@@ -8,6 +8,7 @@ import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
 import mx.uam.ayd.proyecto.presentacion.empleados.ControlRegistrarEmpleado;
 import mx.uam.ayd.proyecto.presentacion.informeInventario.ControlInformeInventario;
 import mx.uam.ayd.proyecto.presentacion.inventarioCocina.ControlInventarioCocina;
+import mx.uam.ayd.proyecto.presentacion.menus.ControlMenu;
 import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
@@ -49,8 +50,10 @@ public class ControlPrincipal {
 	private ControlRegistrarEmpleado controlRegistrarEmpleado;
 	
 	@Autowired
+
+	private ControlMenu controlMenu;
+  @Autowired
 	private ControlRegistrarCliente controlRegistrarCliente;
-	
 	
 	/**
 	 * Lleva el flujo de control hacia la ventana principal
@@ -119,5 +122,9 @@ public class ControlPrincipal {
 	
 	public void agregarRecordatorio() {
 		controlRecordatorios.iniciaNuevo();
+	}
+	
+	public void agregarMenu() {
+		controlMenu.iniciaNuevo();
 	}
 }
