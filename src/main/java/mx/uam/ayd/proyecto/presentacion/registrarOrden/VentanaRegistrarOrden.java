@@ -9,6 +9,9 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JLabel;
 import org.springframework.stereotype.Component;
+
+import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
@@ -22,6 +25,7 @@ import java.awt.event.ActionEvent;
 public class VentanaRegistrarOrden {
 	
 	private ControlRegistrarOrden controlRegistrarOrden; //Control asociado a esta ventana
+	private ControlVentasMenu controlM;
 	private JFrame frmMenu; //JFrame principal de la ventana
 	private JPanel panelBotones = new JPanel();	//JPanel destinado a albergar los botones "Ordenar" y "Cancelar"
 	private int indexMesa; //Almacena el número de mesa sobre la cual se registra una Orden
@@ -71,13 +75,13 @@ public class VentanaRegistrarOrden {
 		listaSpinner.add(0, spinner);
 		menuCompleto.add(0,"NumComensales");
 		
-	    JLabel lblNewLabel_1 = new JLabel("Sopa");
+	    JLabel lblNewLabel_1 = new JLabel("Menú del día");
 		panelCentro.add(lblNewLabel_1);
 		
 		JSpinner spinner_1 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_1);
 		listaSpinner.add(1, spinner_1);
-		menuCompleto.add(1,"Sopa");
+		menuCompleto.add(1,"Menú del día");
 		
 		JLabel lblNewLabel_2 = new JLabel("Consome");
 		panelCentro.add(lblNewLabel_2);
@@ -188,6 +192,10 @@ public class VentanaRegistrarOrden {
 					
 				}else{
 					JOptionPane.showMessageDialog(null, "No se ha enviado la orden (orden nula)");
+				}
+				int m = (Integer)spinner_1.getValue();
+				if(m>0) {
+					
 				}
 				actualizaSpinner();
 				controlRegistrarOrden.actualizaListaComandas();

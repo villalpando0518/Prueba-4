@@ -1,6 +1,8 @@
 package mx.uam.ayd.proyecto;
 
 import java.sql.Timestamp;
+import java.util.Date;
+
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,17 +10,21 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import mx.uam.ayd.proyecto.datos.OrdenRepository;
 import mx.uam.ayd.proyecto.datos.ProductoRepository;
-import mx.uam.ayd.proyecto.datos.RecordatorioRepository;
+import mx.uam.ayd.proyecto.datos.*;
 import mx.uam.ayd.proyecto.negocio.modelo.Orden;
 import mx.uam.ayd.proyecto.negocio.modelo.Producto;
-import mx.uam.ayd.proyecto.negocio.modelo.Recordatorio;
+import mx.uam.ayd.proyecto.negocio.modelo.*;
 import mx.uam.ayd.proyecto.presentacion.principal.ControlPrincipal;
 import mx.uam.ayd.proyecto.presentacion.registrarOrden.ControlRegistrarOrden;
+import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
 
 /**
  * @author Anonimux Corporation
  *
  */
+
+//Prueba de branch
+
 @SpringBootApplication
 public class ProyectoApplication {
 
@@ -36,6 +42,12 @@ public class ProyectoApplication {
 	
 	@Autowired 
 	RecordatorioRepository recordatorioRepository;
+	
+	@Autowired
+	VentasMenuRepository ventasMenuRepository;
+	
+	@Autowired
+	ControlVentasMenu control;
 	
 	/**
 	 * Funcion principal
@@ -59,6 +71,8 @@ public class ProyectoApplication {
 		
 		inicializaBD();
 		controlPrincipal.inicia();
+		//control.inicia();
+		
 	}
 	
 	
@@ -138,6 +152,34 @@ public class ProyectoApplication {
 				+ "algo algotienen hasta el 25 de Julio para \n"
 				+ "registrarse.");
 		recordatorioRepository.save(recordatorio);
+		
+		//Registro Ventas de menú
+		
+		VentasMenu dia1 = new VentasMenu();
+		dia1.setFecha(new Date(2021,02,01));
+		dia1.setMenu("Tacos,Sopa de papa, Agua de limón");
+		dia1.setVentas(20);
+		ventasMenuRepository.save(dia1);
+		
+		VentasMenu dia2 = new VentasMenu();
+		dia2.setFecha(new Date(2021,02,02));
+		dia2.setMenu("Tortas de papa,Sopa de verdura, Agua de piña");
+		dia2.setVentas(22);
+		ventasMenuRepository.save(dia2);
+		
+		VentasMenu dia21 = new VentasMenu();
+		dia21.setFecha(new Date(2021,02,03));
+		dia21.setMenu("Tortas de papa,Sopa de tortilla, Agua de mango");
+		dia21.setVentas(25);
+		ventasMenuRepository.save(dia21);
+		
+		VentasMenu dia211 = new VentasMenu();
+		dia211.setFecha(new Date(2021,02,04));
+		dia211.setMenu("Papas a la francesa,sopa de arroz, Agua de jamaica ");
+		dia211.setVentas(30);
+		ventasMenuRepository.save(dia211);
+		
+		
 		
 	}
 }
