@@ -1,16 +1,18 @@
 package mx.uam.ayd.proyecto.presentacion.principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 
 import mx.uam.ayd.proyecto.presentacion.caja.ControlCorteCaja;
 import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
-import mx.uam.ayd.proyecto.presentacion.empleados.ControlRegistrarEmpleado;
+import mx.uam.ayd.proyecto.presentacion.empleados.ControlEmpleados;
 import mx.uam.ayd.proyecto.presentacion.informeInventario.ControlInformeInventario;
 import mx.uam.ayd.proyecto.presentacion.inventarioCocina.ControlInventarioCocina;
 import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
+import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
 
 /**
  * @author Anonymux Corporation
@@ -45,7 +47,7 @@ public class ControlPrincipal {
 	private ControlRecordatorio controlRecordatorios;
 	
 	@Autowired
-	private ControlRegistrarEmpleado controlRegistrarEmpleado;
+	private ControlEmpleados controlEmpleados;
 
 	/**
 	 * Lleva el flujo de control hacia la ventana principal
@@ -104,8 +106,8 @@ public class ControlPrincipal {
 		
 	}
 	
-	public void agregarEmpleado() {
-		controlRegistrarEmpleado.inicia();
+	public void Empleados() {
+		controlEmpleados.inicia();
 	}
 	
 	public void agregarRecordatorio() {

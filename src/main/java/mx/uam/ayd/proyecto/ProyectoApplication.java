@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
+import mx.uam.ayd.proyecto.datos.EmpleadoRepository;
 import mx.uam.ayd.proyecto.datos.OrdenRepository;
 import mx.uam.ayd.proyecto.datos.ProductoRepository;
 import mx.uam.ayd.proyecto.datos.RecordatorioRepository;
+import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
 import mx.uam.ayd.proyecto.negocio.modelo.Orden;
 import mx.uam.ayd.proyecto.negocio.modelo.Producto;
 import mx.uam.ayd.proyecto.negocio.modelo.Recordatorio;
@@ -36,6 +38,9 @@ public class ProyectoApplication {
 	
 	@Autowired 
 	RecordatorioRepository recordatorioRepository;
+	
+	@Autowired
+	EmpleadoRepository empleadoRepository;
 	
 	/**
 	 * Funcion principal
@@ -139,5 +144,36 @@ public class ProyectoApplication {
 				+ "registrarse.");
 		recordatorioRepository.save(recordatorio);
 		
+		Empleado empleado1 = new Empleado();
+		empleado1.setNombre("Paola");
+		empleado1.setApellidos("Aguillón");
+		empleado1.setEdad(24);
+		empleado1.setSueldo(2120.50);
+		empleado1.setOcupacion("Mesera");
+		empleadoRepository.save(empleado1);
+		
+		Empleado empleado2 = new Empleado();
+		empleado2.setNombre("Jorge");
+		empleado2.setApellidos("Luna");
+		empleado2.setEdad(20);
+		empleado2.setSueldo(2599.50);
+		empleado2.setOcupacion("Cocinero");
+		empleadoRepository.save(empleado2);
+		
+		Empleado empleado3 = new Empleado();
+		empleado3.setNombre("Mariana");
+		empleado3.setApellidos("Mendoza");
+		empleado3.setEdad(32);
+		empleado3.setSueldo(1810.80);
+		empleado3.setOcupacion("Ayudante general");
+		empleadoRepository.save(empleado3);
+		
+		Empleado empleado4 = new Empleado();
+		empleado4.setNombre("Diego");
+		empleado4.setApellidos("Ayala");
+		empleado4.setEdad(28);
+		empleado4.setSueldo(3560.60);
+		empleado4.setOcupacion("Chef");
+		empleadoRepository.save(empleado4);
 	}
 }

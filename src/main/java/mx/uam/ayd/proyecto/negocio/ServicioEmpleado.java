@@ -38,8 +38,19 @@ public class ServicioEmpleado {
 		return empleado;
 	}
 
-	public void Guardar(Empleado empleado) {
-		empleadoRepository.save(empleado);
- }
-	
+	public void editarEmpleado(String nombre, int idEmp, String apellidos, int edad, double sueldo, String ocupacion ) {
+		Empleado emp = empleadoRepository.findByidEmp(idEmp);
+		
+		if(emp == null) {
+			throw new IllegalArgumentException("Este producto no existe");
+		}
+		
+		emp.setNombre(nombre);
+		emp.setApellidos(apellidos);
+		emp.setEdad(edad);
+		emp.setSueldo(sueldo);
+		emp.setOcupacion(ocupacion);
+		
+		empleadoRepository.save(emp);
+	}
 }
