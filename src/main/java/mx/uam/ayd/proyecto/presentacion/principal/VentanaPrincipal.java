@@ -3,6 +3,9 @@ package mx.uam.ayd.proyecto.presentacion.principal;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import org.springframework.stereotype.Component;
+
+//import mx.uam.ayd.proyecto.negocio.modelo.Cliente;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
@@ -149,9 +152,37 @@ public class VentanaPrincipal {
 		});
 		vistasGridLay.add(Recordatorios);
 		
-		JButton ClientesFrec = new JButton("Clientes Frecuentes");
+		JButton ClientesFrec = new JButton("Registrar Cliente");
+		//ClientesFrec.setIcon(new ImageIcon("cliente.png"));
+		//ClientesFrec.setIconTextGap(50);
+		ClientesFrec.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarCliente();
+			}
+		});
 		vistasGridLay.add(ClientesFrec);
+		
+		JButton Menus = new JButton("Menus");
+		Menus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarMenu();
+			}
+		});
+		vistasGridLay.add(Menus);
+
+		/*
+		JButton Clientes = new JButton("Registrar Cliente");
+		Clientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarCliente();
+			}
+		}
+				);
+		vistasGridLay.add(Clientes);
+		*/
 	}
+	
+	
 	
 	/**
 	 * Actualiza el controlador de esta ventana y la muestra.

@@ -1,6 +1,8 @@
 package mx.uam.ayd.proyecto;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
+
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,13 +11,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import mx.uam.ayd.proyecto.datos.EmpleadoRepository;
 import mx.uam.ayd.proyecto.datos.OrdenRepository;
 import mx.uam.ayd.proyecto.datos.ProductoRepository;
-import mx.uam.ayd.proyecto.datos.RecordatorioRepository;
+import mx.uam.ayd.proyecto.datos.*;
+import mx.uam.ayd.proyecto.negocio.modelo.Menu;
 import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
 import mx.uam.ayd.proyecto.negocio.modelo.Orden;
 import mx.uam.ayd.proyecto.negocio.modelo.Producto;
-import mx.uam.ayd.proyecto.negocio.modelo.Recordatorio;
+import mx.uam.ayd.proyecto.negocio.modelo.*;
 import mx.uam.ayd.proyecto.presentacion.principal.ControlPrincipal;
 import mx.uam.ayd.proyecto.presentacion.registrarOrden.ControlRegistrarOrden;
+import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
 
 /**
  * @author Anonimux Corporation
@@ -41,6 +45,16 @@ public class ProyectoApplication {
 	
 	@Autowired
 	EmpleadoRepository empleadoRepository;
+	
+	@Autowired
+	VentasMenuRepository ventasMenuRepository;
+	
+	@Autowired
+	ControlVentasMenu control;
+	
+	@Autowired 
+	MenuRepository menuRepository;
+	
 	
 	/**
 	 * Funcion principal
@@ -175,5 +189,49 @@ public class ProyectoApplication {
 		empleado4.setSueldo(3560.60);
 		empleado4.setOcupacion("Chef");
 		empleadoRepository.save(empleado4);
+		//Registro Ventas de menú
+		
+		VentasMenu dia1 = new VentasMenu();
+		dia1.setFecha(LocalDate.of(2021,02,01));
+		dia1.setMenu("Tacos,Sopa de papa, Agua de limón");
+		dia1.setVentas(20);
+		ventasMenuRepository.save(dia1);
+		
+		VentasMenu dia2 = new VentasMenu();
+		dia2.setFecha(LocalDate.of(2021,02,02));
+		dia2.setMenu("Tortas de papa,Sopa de verdura, Agua de piña");
+		dia2.setVentas(22);
+		ventasMenuRepository.save(dia2);
+		
+		VentasMenu dia21 = new VentasMenu();
+		dia21.setFecha(LocalDate.of(2021,02,03));
+		dia21.setMenu("Tortas de papa,Sopa de tortilla, Agua de mango");
+		dia21.setVentas(25);
+		ventasMenuRepository.save(dia21);
+		
+		VentasMenu dia211 = new VentasMenu();
+		dia211.setFecha(LocalDate.of(2021,02,04));
+		dia211.setMenu("Papas a la francesa,sopa de arroz, Agua de jamaica ");
+		dia211.setVentas(30);
+		ventasMenuRepository.save(dia211);
+		
+		
+		
+		//Registro de menú
+		
+		Menu menu = new Menu();
+		menu.setId(1);
+		menu.setMen("Sopa \n"
+				+ "Consome\n"
+				+ "Arroz\n"
+				+ "Pasta\n"
+				+ "Chile relleno \n"
+				+ "Taco Azteca \n"
+				+ "Filete de Pescado empanizado"
+		        + "Enchiladas\n"
+		        + "Gelatina\n"
+		        + "Flan\n");
+		
+		menuRepository.save(menu);
 	}
 }

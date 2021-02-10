@@ -9,10 +9,13 @@ import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
 import mx.uam.ayd.proyecto.presentacion.empleados.ControlEmpleados;
 import mx.uam.ayd.proyecto.presentacion.informeInventario.ControlInformeInventario;
 import mx.uam.ayd.proyecto.presentacion.inventarioCocina.ControlInventarioCocina;
+import mx.uam.ayd.proyecto.presentacion.menus.ControlMenu;
 import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
+import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
+//import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 
 /**
  * @author Anonymux Corporation
@@ -48,7 +51,17 @@ public class ControlPrincipal {
 	
 	@Autowired
 	private ControlEmpleados controlEmpleados;
+	
+	@Autowired
 
+	private ControlMenu controlMenu;
+	
+	@Autowired
+	private ControlRegistrarCliente controlRegistrarCliente;
+  
+	//@Autowired
+	//private ControlRegistrarCliente controlRegistrarCliente;
+	
 	/**
 	 * Lleva el flujo de control hacia la ventana principal
 	 * 
@@ -109,8 +122,20 @@ public class ControlPrincipal {
 	public void Empleados() {
 		controlEmpleados.inicia();
 	}
-	
+	/*
+	public void agregarCliente() {
+		controlRegistrarCliente.inicia();
+	}
+	*/
 	public void agregarRecordatorio() {
 		controlRecordatorios.iniciaNuevo();
+	}
+	
+	public void agregarMenu() {
+		controlMenu.iniciaNuevo();
+	}
+	
+	public void agregarCliente() {
+		controlRegistrarCliente.inicia();
 	}
 }

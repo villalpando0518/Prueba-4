@@ -29,8 +29,8 @@ public class ServicioOrden {
 			platillo = pedidos.get(i);
 			if(platillo.equals("NumComensales"))
 		        costoUnitario = 0;
-			if(platillo.equals("Sopa"))
-		        costoUnitario = 30;
+			if(platillo.equals("Menú del día"))
+		        costoUnitario = 40;
 			if(platillo.equals("Consome"))
 		        costoUnitario = 30;
 			if(platillo.equals("Arroz"))
@@ -54,6 +54,7 @@ public class ServicioOrden {
 			Orden aux = new Orden(numMesa,pedidos.get(i),hrApertura,costoUnitario, 0);
 			ordenRepository.save(aux);	
 			ordenes.add(aux);
+			
 		}
 		return ordenes;
 	}
