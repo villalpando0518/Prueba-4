@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.JLabel;
@@ -16,6 +17,7 @@ import java.awt.event.ActionEvent;
 
 import mx.uam.ayd.proyecto.negocio.modelo.Producto;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
+import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
 
 import javax.swing.JTable;
 
@@ -44,6 +46,9 @@ public class VentanaInformeInventario extends JFrame {
 	 * Se declara la comunicación con el controlador de Realizar Pedidos{@link ControlRealizarPedido}
 	 */
 	private ControlInformeInventario control;
+	
+	@Autowired
+	private ControlVentasMenu controlVentasM;
 	/**
 	 * Se declara la tabla donde se despliegan los datos obtenido
 	 */
@@ -96,58 +101,29 @@ public class VentanaInformeInventario extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel title = new JLabel("Informes de Inventario");
+		title.setBounds(122, 58, 392, 73);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		title.setFont(new Font("Arial", Font.BOLD, 32));
 		
 		JLabel lblTabla = new JLabel("Productos que necesitan atención (hay escasez) ");
+		lblTabla.setBounds(52, 150, 380, 13);
 		lblTabla.setFont(new Font("Arial", Font.PLAIN, 14));
 		
 		JButton btnRealizarPedido = new JButton("Realizar un pedido");
+		btnRealizarPedido.setBounds(123, 394, 179, 33);
 		btnRealizarPedido.setFont(new Font("Arial", Font.PLAIN, 14));
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(52, 181, 519, 195);
 		scrollPane.setEnabled(false);
 		
 		JButton btnCerrar = new JButton("Cerrar");
+		btnCerrar.setBounds(454, 470, 111, 25);
 		btnCerrar.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(117)
-					.addComponent(title, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(47)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblTabla, GroupLayout.PREFERRED_SIZE, 380, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-							.addComponent(btnCerrar)
-							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 519, GroupLayout.PREFERRED_SIZE)))
-					.addGap(42))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(227, Short.MAX_VALUE)
-					.addComponent(btnRealizarPedido, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
-					.addGap(202))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(53)
-					.addComponent(title, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-					.addGap(19)
-					.addComponent(lblTabla, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 195, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnRealizarPedido, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-					.addGap(62)
-					.addComponent(btnCerrar)
-					.addContainerGap())
-		);
 		
 		table = new JTable();
 		table.setEnabled(false);
@@ -158,7 +134,22 @@ public class VentanaInformeInventario extends JFrame {
 		table.getColumnModel().getColumn(3).setPreferredWidth(203);
 		table.getColumnModel().getColumn(5).setPreferredWidth(99);
 		scrollPane.setViewportView(table);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(title);
+		contentPane.add(lblTabla);
+		contentPane.add(btnCerrar);
+		contentPane.add(scrollPane);
+		contentPane.add(btnRealizarPedido);
+		
+		JButton btnNewButton = new JButton("Ventas de Menú");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlVentasM.inicia();
+			}
+		});
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 14));
+		btnNewButton.setBounds(336, 394, 166, 33);
+		contentPane.add(btnNewButton);
 		
 		// Listeners de los botones de la ventana
 		

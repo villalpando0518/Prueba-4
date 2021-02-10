@@ -1,6 +1,8 @@
 package mx.uam.ayd.proyecto.negocio.modelo;
 
-import java.util.Date;
+
+import java.time.LocalDate;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,7 +14,7 @@ import lombok.Data;
 public class VentasMenu {
 
 	@Id
-	private Date fecha;
+	private LocalDate fecha;
 	private String menu;
 	private int ventas;
 	

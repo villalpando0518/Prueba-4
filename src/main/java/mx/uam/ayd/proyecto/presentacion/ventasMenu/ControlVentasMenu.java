@@ -1,5 +1,8 @@
 package mx.uam.ayd.proyecto.presentacion.ventasMenu;
 
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +28,22 @@ public class ControlVentasMenu {
 		return servicio.recuperaVentas();
 	}
 	
-	public void actualizaVentas() {
+	public void actualizaVentasMenuHoy(int ventas) {
 		
+		VentasMenu hoy = servicio.recuperaHoy();
+		if(hoy==null) {
+			
+			hoy = new VentasMenu();
+			hoy.setFecha(LocalDate.now());
+			hoy.setMenu("...Obteniendo menú");
+			hoy.setVentas(ventas);	
+		}
+		else {
+			
+			hoy.setVentas(hoy.getVentas() + ventas);
+		}
+		
+		servicio.actualiza(hoy);
 	}
 
 }

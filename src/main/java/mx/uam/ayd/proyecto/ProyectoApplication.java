@@ -1,7 +1,10 @@
 package mx.uam.ayd.proyecto;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -156,25 +159,25 @@ public class ProyectoApplication {
 		//Registro Ventas de menú
 		
 		VentasMenu dia1 = new VentasMenu();
-		dia1.setFecha(new Date(2021,02,01));
+		dia1.setFecha(LocalDate.of(2021,02,01));
 		dia1.setMenu("Tacos,Sopa de papa, Agua de limón");
 		dia1.setVentas(20);
 		ventasMenuRepository.save(dia1);
 		
 		VentasMenu dia2 = new VentasMenu();
-		dia2.setFecha(new Date(2021,02,02));
+		dia2.setFecha(LocalDate.of(2021,02,02));
 		dia2.setMenu("Tortas de papa,Sopa de verdura, Agua de piña");
 		dia2.setVentas(22);
 		ventasMenuRepository.save(dia2);
 		
 		VentasMenu dia21 = new VentasMenu();
-		dia21.setFecha(new Date(2021,02,03));
+		dia21.setFecha(LocalDate.of(2021,02,03));
 		dia21.setMenu("Tortas de papa,Sopa de tortilla, Agua de mango");
 		dia21.setVentas(25);
 		ventasMenuRepository.save(dia21);
 		
 		VentasMenu dia211 = new VentasMenu();
-		dia211.setFecha(new Date(2021,02,04));
+		dia211.setFecha(LocalDate.of(2021,02,04));
 		dia211.setMenu("Papas a la francesa,sopa de arroz, Agua de jamaica ");
 		dia211.setVentas(30);
 		ventasMenuRepository.save(dia211);

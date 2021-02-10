@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JLabel;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
@@ -25,6 +27,7 @@ import java.awt.event.ActionEvent;
 public class VentanaRegistrarOrden {
 	
 	private ControlRegistrarOrden controlRegistrarOrden; //Control asociado a esta ventana
+	@Autowired
 	private ControlVentasMenu controlM;
 	private JFrame frmMenu; //JFrame principal de la ventana
 	private JPanel panelBotones = new JPanel();	//JPanel destinado a albergar los botones "Ordenar" y "Cancelar"
@@ -195,7 +198,7 @@ public class VentanaRegistrarOrden {
 				}
 				int m = (Integer)spinner_1.getValue();
 				if(m>0) {
-					
+					controlM.actualizaVentasMenuHoy(m);
 				}
 				actualizaSpinner();
 				controlRegistrarOrden.actualizaListaComandas();

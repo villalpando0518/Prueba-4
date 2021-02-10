@@ -1,5 +1,6 @@
 package mx.uam.ayd.proyecto.negocio;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,17 +32,21 @@ public class ServicioVentasMenu {
 	public void crea(VentasMenu v) {
 		
 		ventasMenuRepository.save(v);
-		
-		
+	
 	}
 	
-	public VentasMenu recupera(Date d) {
-		Long i = new Long(1);
+	public void actualiza(VentasMenu v) {
+		
+		ventasMenuRepository.save(v);
+	}
+	
+	public VentasMenu recuperaHoy() {
 		VentasMenu v= new VentasMenu(); 
 			//v=	ventasMenuRepository.findById(i);
+		LocalDate fechaDeHoy = LocalDate.now();
+		v = ventasMenuRepository.findByFecha(fechaDeHoy);
 		
-		return v;
-		
+		return v;	
 	}
 
 }
