@@ -152,7 +152,14 @@ public class VentanaPrincipal {
 		});
 		vistasGridLay.add(Recordatorios);
 		
-		JButton ClientesFrec = new JButton("Clientes Frecuentes");
+		JButton ClientesFrec = new JButton("Registrar Cliente");
+		//ClientesFrec.setIcon(new ImageIcon("cliente.png"));
+		//ClientesFrec.setIconTextGap(50);
+		ClientesFrec.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarCliente();
+			}
+		});
 		vistasGridLay.add(ClientesFrec);
 		
 		JButton Menus = new JButton("Menus");
