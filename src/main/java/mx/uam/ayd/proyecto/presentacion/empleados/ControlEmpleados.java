@@ -10,6 +10,8 @@ import mx.uam.ayd.proyecto.presentacion.editarEmpleado.ControlEditarEmpleado;
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.VentanaRegistrarEmpleado;
 
+//Holis
+
 @Component
 public class ControlEmpleados {
 	
