@@ -40,6 +40,9 @@ public class ControlPrincipal {
 	private ControlInformeInventario controlInformeInventario;
 	
 	@Autowired
+	private ControlInformeInventario controlInformeInsumos;
+	
+	@Autowired
 	private ControlCorteCaja controlCorteCaja;
 	
 	@Autowired
@@ -109,6 +112,14 @@ public class ControlPrincipal {
 	 */
 	public void informeInventario() {
 		controlInformeInventario.inicia();
+	}
+	
+	
+	/**
+	 * Inicia el flujo de informeInsumos
+	 */
+	public void informeInsumos() {
+		controlInformeInsumos.inicia();
 	}
 	
 	/**
