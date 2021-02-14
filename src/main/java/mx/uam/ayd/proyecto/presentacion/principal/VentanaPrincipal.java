@@ -179,10 +179,21 @@ public class VentanaPrincipal {
 		}
 				);
 		vistasGridLay.add(Clientes);
-		*/
+		
+			*/
+	
+		
+		JButton Insumos = new JButton("Insumos");
+		Insumos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.informeInsumos();
+			}
+		});
+		vistasGridLay.add(Insumos);
+	
+	
 	}
-	
-	
+		
 	
 	/**
 	 * Actualiza el controlador de esta ventana y la muestra.
