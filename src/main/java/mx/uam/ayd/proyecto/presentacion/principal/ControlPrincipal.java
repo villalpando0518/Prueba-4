@@ -14,6 +14,7 @@ import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
+import mx.uam.ayd.proyecto.presentacion.sugerenciaMenu.ControlSugerencia;
 import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 //import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 
@@ -61,6 +62,9 @@ public class ControlPrincipal {
 	
 	@Autowired
 	private ControlRegistrarCliente controlRegistrarCliente;
+	
+	@Autowired
+	private ControlSugerencia controlSugerencia;
   
 	//@Autowired
 	//private ControlRegistrarCliente controlRegistrarCliente;
@@ -148,5 +152,9 @@ public class ControlPrincipal {
 	
 	public void agregarCliente() {
 		controlRegistrarCliente.inicia();
+	}
+	
+	public void agregarSugerencia() {
+		controlSugerencia.inicia();
 	}
 }
