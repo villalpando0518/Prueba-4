@@ -56,8 +56,10 @@ public class ProyectoApplication {
 	MenuRepository menuRepository;
 	
 	@Autowired
+
 	ProveedorRepository proveedorRepository;
-	
+	SugerenciaRepository sugerenciaRepository;
+
 	
 	/**
 	 * Funcion principal
@@ -260,7 +262,25 @@ public class ProyectoApplication {
 		proveedor3.setCosto(2455.80);
 		proveedorRepository.save(proveedor3);
 		
+		// Registro Sugerencias 
 		
+		Sugerencia sugerencia= new Sugerencia();
+		sugerencia.setIdSugeregncia(1);
+		sugerencia.setNombre("Pedro");
+		sugerencia.setSugerencia("Pollo Frito");
+		sugerenciaRepository.save(sugerencia);
+		
+		Sugerencia sugerencia1= new Sugerencia();
+		sugerencia1.setIdSugeregncia(2);
+		sugerencia1.setNombre("Miriam");
+		sugerencia1.setSugerencia("Sopes");
+		sugerenciaRepository.save(sugerencia1);
+		
+		Sugerencia sugerencia2= new Sugerencia();
+		sugerencia2.setIdSugeregncia(3);
+		sugerencia2.setNombre("Rebeca");
+		sugerencia2.setSugerencia("Tamales Oaxaqueños");
+		sugerenciaRepository.save(sugerencia2);
 	}
 	
 }

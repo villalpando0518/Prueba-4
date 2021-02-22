@@ -15,6 +15,7 @@ import mx.uam.ayd.proyecto.presentacion.proveedores.ControlProveedores;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
+import mx.uam.ayd.proyecto.presentacion.sugerenciaMenu.ControlSugerencia;
 import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 //import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 
@@ -64,7 +65,11 @@ public class ControlPrincipal {
 	private ControlRegistrarCliente controlRegistrarCliente;
 	
 	@Autowired
+
 	private ControlProveedores controlProveedores;
+=======
+	private ControlSugerencia controlSugerencia;
+  
   
 	//@Autowired
 	//private ControlRegistrarCliente controlRegistrarCliente;
@@ -156,5 +161,9 @@ public class ControlPrincipal {
 	
 	public void Proveedores() {
 		controlProveedores.inicia();
+=======
+	public void agregarSugerencia() {
+		controlSugerencia.inicia();
+  
 	}
 }
