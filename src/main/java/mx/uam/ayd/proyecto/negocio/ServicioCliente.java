@@ -26,17 +26,15 @@ public class ServicioCliente {
 		return clientes;
 	}
 
-	public Cliente crea(String nombreCliente, String correo){
+	public Cliente crea(String nombreCliente, String correo, String promocion){
 		
 		Cliente cliente = clienteRepository.findBynombreCliente(nombreCliente);
 		
-		cliente = new Cliente(nombreCliente, correo);
+		cliente = new Cliente(nombreCliente, correo, promocion);
 		clienteRepository.save(cliente);
 		
 		return cliente;
 	}
 
-	public void Guardar(Cliente cliente) {
-		clienteRepository.save(cliente);
- }
+
 }

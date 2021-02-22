@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import mx.uam.ayd.proyecto.presentacion.caja.ControlCorteCaja;
+import mx.uam.ayd.proyecto.presentacion.clientes.ControlClientes;
 import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
 import mx.uam.ayd.proyecto.presentacion.empleados.ControlEmpleados;
 import mx.uam.ayd.proyecto.presentacion.informeInventario.ControlInformeInventario;
@@ -13,9 +14,6 @@ import mx.uam.ayd.proyecto.presentacion.menus.ControlMenu;
 import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
-import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
-import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
-//import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 
 /**
  * @author Anonymux Corporation
@@ -57,7 +55,7 @@ public class ControlPrincipal {
 	private ControlMenu controlMenu;
 	
 	@Autowired
-	private ControlRegistrarCliente controlRegistrarCliente;
+	private ControlClientes controlClientes;
   
 	//@Autowired
 	//private ControlRegistrarCliente controlRegistrarCliente;
@@ -122,11 +120,14 @@ public class ControlPrincipal {
 	public void Empleados() {
 		controlEmpleados.inicia();
 	}
-	/*
-	public void agregarCliente() {
+	
+	/*public void agregarCliente() {
 		controlRegistrarCliente.inicia();
+	}*/
+	public void Clientes() {
+		controlClientes.inicia();
 	}
-	*/
+	
 	public void agregarRecordatorio() {
 		controlRecordatorios.iniciaNuevo();
 	}
@@ -135,7 +136,5 @@ public class ControlPrincipal {
 		controlMenu.iniciaNuevo();
 	}
 	
-	public void agregarCliente() {
-		controlRegistrarCliente.inicia();
-	}
+
 }

@@ -55,6 +55,9 @@ public class ProyectoApplication {
 	@Autowired 
 	MenuRepository menuRepository;
 	
+	@Autowired
+	ClienteRepository clienteRepository;
+	
 	
 	/**
 	 * Funcion principal
@@ -189,6 +192,14 @@ public class ProyectoApplication {
 		empleado4.setSueldo(3560.60);
 		empleado4.setOcupacion("Chef");
 		empleadoRepository.save(empleado4);
+		
+		Cliente cliente1 = new Cliente();
+		cliente1.setNombre("Mario");
+		cliente1.setCorreo("mario46@hotmail.com");
+		cliente1.setPromocion("Sopa 2x1");
+		clienteRepository.save(cliente1);
+		
+		
 		//Registro Ventas de menú
 		
 		VentasMenu dia1 = new VentasMenu();
