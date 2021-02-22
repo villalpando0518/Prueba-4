@@ -154,21 +154,27 @@ public class VentanaPrincipal {
 		});
 		vistasGridLay.add(Recordatorios);
 		
- Paola_A
+ 
 		JButton Clientes = new JButton("Clientes");
 		//ClientesFrec.setIcon(new ImageIcon("cliente.png"));
 		Clientes.setIconTextGap(50);
 		Clientes.addActionListener(new ActionListener() {
-=======
-		JButton ClientesFrec = new JButton("Registrar Cliente");
+			public void actionPerformed(ActionEvent e) {
+				control.Clientes();
+				}
+		});
+		vistasGridLay.add(Clientes);
+
+		/*JButton ClientesFrec = new JButton("Registrar Cliente");
 		ClientesFrec.setIcon(new ImageIcon("cliente.png"));
-		ClientesFrec.setIconTextGap(50);
-		ClientesFrec.addActionListener(new ActionListener() { master
+		ClientesFrec.setIconTextGap(50); 
+		ClientesFrec.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				control.Clientes();
 			}
+		
 		});
-		vistasGridLay.add(Clientes);
+		vistasGridLay.add(Clientes); */
 		
 		JButton Menus = new JButton("Menus");
 		Menus.addActionListener(new ActionListener() {

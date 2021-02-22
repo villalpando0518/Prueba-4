@@ -56,12 +56,13 @@ public class ProyectoApplication {
 	MenuRepository menuRepository;
 	
 	@Autowired
- Paola_A
 	ClienteRepository clienteRepository;
-
+	
+	@Autowired
 	ProveedorRepository proveedorRepository;
+	
+	@Autowired
 	SugerenciaRepository sugerenciaRepository;
-master
 	
 	/**
 	 * Funcion principal
@@ -196,19 +197,13 @@ master
 		empleado4.setSueldo(3560.60);
 		empleado4.setOcupacion("Chef");
 		empleadoRepository.save(empleado4);
- Paola_A
 		
 		Cliente cliente1 = new Cliente();
 		cliente1.setNombre("Mario");
 		cliente1.setCorreo("mario46@hotmail.com");
 		cliente1.setPromocion("Sopa 2x1");
 		clienteRepository.save(cliente1);
-		
-		
-		//Registro Ventas de menú
 
- master
-		
 		//Registro Ventas de menú
 		VentasMenu dia1 = new VentasMenu();
 		dia1.setFecha(LocalDate.of(2021,02,01));
@@ -276,8 +271,6 @@ master
 		
 		// Registro Sugerencias 
 		
-		/**
-		 * 
 		 
 		Sugerencia sugerencia= new Sugerencia();
 		sugerencia.setIdSugeregncia(1);
@@ -296,7 +289,7 @@ master
 		sugerencia2.setNombre("Rebeca");
 		sugerencia2.setSugerencia("Tamales Oaxaqueños");
 		sugerenciaRepository.save(sugerencia2);
-		*/
+		
 	}
 	
 }
