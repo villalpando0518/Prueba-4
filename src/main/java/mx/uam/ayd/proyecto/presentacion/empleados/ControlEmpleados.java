@@ -8,8 +8,8 @@ import mx.uam.ayd.proyecto.negocio.ServicioEmpleado;
 import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
 import mx.uam.ayd.proyecto.presentacion.editarEmpleado.ControlEditarEmpleado;
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
-import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.VentanaRegistrarEmpleado;
 
+ Paola_A
 /**
  * Panther Zone
  * Controla las funciones de la ventana de empleados,
@@ -17,6 +17,9 @@ import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.VentanaRegistrarEmplea
  * ventanas correctamente.
  * @author Paola Aguillón
  */
+=======
+
+ master
 @Component
 public class ControlEmpleados {
 	

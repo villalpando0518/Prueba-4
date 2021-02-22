@@ -1,11 +1,12 @@
 package mx.uam.ayd.proyecto.presentacion.caja;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import mx.uam.ayd.proyecto.negocio.ServicioCorteCaja;
+import mx.uam.ayd.proyecto.negocio.ServicioEmpleado;
 import mx.uam.ayd.proyecto.negocio.ServicioOrden;
+
 
 /**
  * @author Anonimux Corporation
@@ -26,6 +27,9 @@ public class ControlCorteCaja {
 	@Autowired
 	private ServicioCorteCaja servicioCorteCaja;
 	
+	@Autowired
+	private ServicioEmpleado servicioEmpleado;
+	
 	/**
 	 * Muestra la ventanaCorteCaja e inicializa sus atributos de clase con los parámetros dados.
 	 */
@@ -41,8 +45,8 @@ public class ControlCorteCaja {
 	 * @param montoTotal El monto total de corte de caja generado por el sistema de acuerdo a la suma de todos los montos unitarios de las órdenes vendidas en la fecha del sistema con el estado = 3 (PAGADO) del OrdenRepository.
 	 */
 	public void continuar(String fechaHoy, double montoTotal) {
-		ventanaCorteCaja2.muestra(this, fechaHoy, montoTotal);
 		
+		ventanaCorteCaja2.muestra(this, fechaHoy, montoTotal, servicioEmpleado.recuperarEmpleados());
 	}
 
 	/**
@@ -52,9 +56,17 @@ public class ControlCorteCaja {
 		ventanaCorteCaja.apagar();
 		
 	}
-
-	public void creaCorteCaja(double corteSistema, double corteReal, String observaciones) {
-		servicioCorteCaja.creaCorteCaja(corteSistema, corteReal, observaciones);
+	
+	/**
+	 * Manda a guardar la información en la base de datos como un corte de caja
+	 * @param corteSistema Corte calculado por el sistema
+	 * @param corteReal Corte introducido en la ventana
+	 * @param observaciones Guarda notas sobre el corte
+	 * @param empleado Nombre del empleado que atendió
+	 * @param com Número de comensales 
+	 */
+	public void creaCorteCaja(double corteSistema, double corteReal, String observaciones, String empleado, int com) {
+		servicioCorteCaja.creaCorteCaja(corteSistema, corteReal, observaciones,empleado,com);
 		
 	}
 

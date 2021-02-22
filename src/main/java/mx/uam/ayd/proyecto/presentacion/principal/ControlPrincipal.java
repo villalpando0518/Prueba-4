@@ -1,9 +1,7 @@
 package mx.uam.ayd.proyecto.presentacion.principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Component;
-
 import mx.uam.ayd.proyecto.presentacion.caja.ControlCorteCaja;
 import mx.uam.ayd.proyecto.presentacion.clientes.ControlClientes;
 import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
@@ -12,8 +10,15 @@ import mx.uam.ayd.proyecto.presentacion.informeInventario.ControlInformeInventar
 import mx.uam.ayd.proyecto.presentacion.inventarioCocina.ControlInventarioCocina;
 import mx.uam.ayd.proyecto.presentacion.menus.ControlMenu;
 import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
+import mx.uam.ayd.proyecto.presentacion.proveedores.ControlProveedores;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
+ Paola_A
+import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
+import mx.uam.ayd.proyecto.presentacion.sugerenciaMenu.ControlSugerencia;
+import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
+//import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
+ master
 
 /**
  * @author Anonymux Corporation
@@ -38,6 +43,9 @@ public class ControlPrincipal {
 	private ControlInformeInventario controlInformeInventario;
 	
 	@Autowired
+	private ControlInformeInventario controlInformeInsumos;
+	
+	@Autowired
 	private ControlCorteCaja controlCorteCaja;
 	
 	@Autowired
@@ -55,7 +63,18 @@ public class ControlPrincipal {
 	private ControlMenu controlMenu;
 	
 	@Autowired
+ Paola_A
 	private ControlClientes controlClientes;
+
+	private ControlRegistrarCliente controlRegistrarCliente;
+	
+	@Autowired
+
+	private ControlProveedores controlProveedores;
+
+	private ControlSugerencia controlSugerencia;
+  
+ master
   
 	//@Autowired
 	//private ControlRegistrarCliente controlRegistrarCliente;
@@ -67,8 +86,6 @@ public class ControlPrincipal {
 	public void inicia() {
 
 		ventana.muestra(this);
-		
-		//yo
 		
 		controlRecordatorios.inicia();
 		
@@ -109,6 +126,14 @@ public class ControlPrincipal {
 		controlInformeInventario.inicia();
 	}
 	
+	
+	/**
+	 * Inicia el flujo de informeInsumos
+	 */
+	public void informeInsumos() {
+		controlInformeInsumos.inicia();
+	}
+	
 	/**
 	 * Inicia el flujo de controlInventario
 	 */
@@ -136,5 +161,20 @@ public class ControlPrincipal {
 		controlMenu.iniciaNuevo();
 	}
 	
+ Paola_A
 
+=======
+	public void agregarCliente() {
+		controlRegistrarCliente.inicia();
+	}
+	
+	public void Proveedores() {
+		controlProveedores.inicia();
+	}
+
+	public void agregarSugerencia() {
+		controlSugerencia.inicia();
+  
+	}
+ master
 }

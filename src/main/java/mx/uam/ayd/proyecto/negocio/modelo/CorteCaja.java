@@ -24,6 +24,8 @@ public class CorteCaja {
 	private double corteSistema;
 	private double corteReal;
 	private Timestamp fechaCorte;
+	private int comensales;
+	private String empleado;
 	private String Observaciones;
 	
 	public CorteCaja(double corteSistema, double corteReal, Timestamp fechaCorte, String observaciones) {
