@@ -1,9 +1,7 @@
 package mx.uam.ayd.proyecto.presentacion.principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Component;
-
 import mx.uam.ayd.proyecto.presentacion.caja.ControlCorteCaja;
 import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
 import mx.uam.ayd.proyecto.presentacion.empleados.ControlEmpleados;
