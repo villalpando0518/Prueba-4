@@ -36,12 +36,9 @@ public class VentanaRegistrarCliente extends JFrame {
 	 * VentanaRegistrarCliente: Permite inicializar los componentes de la ventana
 	 */
 	public VentanaRegistrarCliente() {
- Paola_A
 		setTitle("Agregar Cliente");
-		
-=======
 		setTitle("Registrar Cliente");
- master
+
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

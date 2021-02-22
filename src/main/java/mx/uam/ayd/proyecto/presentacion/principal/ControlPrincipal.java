@@ -13,12 +13,11 @@ import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.proveedores.ControlProveedores;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
- Paola_A
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
 import mx.uam.ayd.proyecto.presentacion.sugerenciaMenu.ControlSugerencia;
 import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 //import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
- master
+
 
 /**
  * @author Anonymux Corporation
@@ -63,18 +62,17 @@ public class ControlPrincipal {
 	private ControlMenu controlMenu;
 	
 	@Autowired
- Paola_A
 	private ControlClientes controlClientes;
-
-	private ControlRegistrarCliente controlRegistrarCliente;
 	
 	@Autowired
-
+    private ControlRegistrarCliente controlRegistrarCliente;
+	
+	@Autowired
 	private ControlProveedores controlProveedores;
-
+	
+	@Autowired
 	private ControlSugerencia controlSugerencia;
-  
- master
+
   
 	//@Autowired
 	//private ControlRegistrarCliente controlRegistrarCliente;
@@ -160,10 +158,7 @@ public class ControlPrincipal {
 	public void agregarMenu() {
 		controlMenu.iniciaNuevo();
 	}
-	
- Paola_A
 
-=======
 	public void agregarCliente() {
 		controlRegistrarCliente.inicia();
 	}
@@ -176,5 +171,6 @@ public class ControlPrincipal {
 		controlSugerencia.inicia();
   
 	}
- master
+	
+	/** Ultima versión*/
 }
