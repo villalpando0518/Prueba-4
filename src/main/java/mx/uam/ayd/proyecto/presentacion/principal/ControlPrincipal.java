@@ -67,7 +67,7 @@ public class ControlPrincipal {
 	@Autowired
 
 	private ControlProveedores controlProveedores;
-=======
+
 	private ControlSugerencia controlSugerencia;
   
   
@@ -159,7 +159,8 @@ public class ControlPrincipal {
 	
 	public void Proveedores() {
 		controlProveedores.inicia();
-=======
+	}
+
 	public void agregarSugerencia() {
 		controlSugerencia.inicia();
   

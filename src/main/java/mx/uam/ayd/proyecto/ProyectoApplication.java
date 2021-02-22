@@ -262,6 +262,9 @@ public class ProyectoApplication {
 		
 		// Registro Sugerencias 
 		
+		/**
+		 * 
+		 
 		Sugerencia sugerencia= new Sugerencia();
 		sugerencia.setIdSugeregncia(1);
 		sugerencia.setNombre("Pedro");
@@ -279,6 +282,7 @@ public class ProyectoApplication {
 		sugerencia2.setNombre("Rebeca");
 		sugerencia2.setSugerencia("Tamales Oaxaqueños");
 		sugerenciaRepository.save(sugerencia2);
+		*/
 	}
 	
 }
