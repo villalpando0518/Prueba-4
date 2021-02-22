@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 /**
  * @author Anonimux Corporation
@@ -42,7 +43,7 @@ public class VentanaPrincipal {
 		 */
 		ventPrincipal = new JFrame();
 		ventPrincipal.setTitle("Vista Principal");
-		ventPrincipal.setBounds(100, 100, 516, 323);
+		ventPrincipal.setBounds(100, 100, 563, 460);
 		ventPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventPrincipal.getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -153,8 +154,8 @@ public class VentanaPrincipal {
 		vistasGridLay.add(Recordatorios);
 		
 		JButton ClientesFrec = new JButton("Registrar Cliente");
-		//ClientesFrec.setIcon(new ImageIcon("cliente.png"));
-		//ClientesFrec.setIconTextGap(50);
+		ClientesFrec.setIcon(new ImageIcon("cliente.png"));
+		ClientesFrec.setIconTextGap(50);
 		ClientesFrec.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				control.agregarCliente();
@@ -169,6 +170,15 @@ public class VentanaPrincipal {
 			}
 		});
 		vistasGridLay.add(Menus);
+		
+		JButton Sugerencia = new JButton("Sugerencia Menú");
+		Sugerencia.setIcon(new ImageIcon("C:\\Users\\Yuriko\\git\\Prueba-4\\sugerencia.png"));
+		Sugerencia.setIconTextGap(50);
+		Sugerencia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.agregarSugerencia();		}
+		});
+		vistasGridLay.add(Sugerencia);
 
 		/*
 		JButton Clientes = new JButton("Registrar Cliente");
@@ -179,10 +189,30 @@ public class VentanaPrincipal {
 		}
 				);
 		vistasGridLay.add(Clientes);
-		*/
+		
+			*/
+	
+		
+		JButton Insumos = new JButton("Insumos");
+		Insumos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.informeInsumos();
+			}
+		});
+		vistasGridLay.add(Insumos);
+		
+		JButton btnProveedores = new JButton("Proveedores");
+		btnProveedores.setIcon(new ImageIcon("iconos/proveedor.png"));
+		btnProveedores.setIconTextGap(50);
+		btnProveedores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.Proveedores();
+			}
+		});
+		vistasGridLay.add(btnProveedores);
+	
 	}
-	
-	
+		
 	
 	/**
 	 * Actualiza el controlador de esta ventana y la muestra.

@@ -22,7 +22,7 @@ import mx.uam.ayd.proyecto.presentacion.registrarOrden.ControlRegistrarOrden;
 import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
 
 /**
- * @author Anonimux Corporation
+ * @author Panther Zone
  *
  */
 @SpringBootApplication
@@ -55,6 +55,11 @@ public class ProyectoApplication {
 	@Autowired 
 	MenuRepository menuRepository;
 	
+	@Autowired
+
+	ProveedorRepository proveedorRepository;
+	SugerenciaRepository sugerenciaRepository;
+
 	
 	/**
 	 * Funcion principal
@@ -231,5 +236,49 @@ public class ProyectoApplication {
 		        + "Gelatina\n"
 		        + "Flan\n");
 		menuRepository.save(menu);
+		
+		//Registro de algunos proveedores
+		
+		Proveedor proveedor1 = new Proveedor();
+		proveedor1.setNomProveedor("Aaron");
+		proveedor1.setMarca("Alpura");
+		proveedor1.setTipo("Embutidos y lacteos");
+		proveedor1.setCosto(4600);
+		proveedorRepository.save(proveedor1);
+		
+		Proveedor proveedor2 = new Proveedor();
+		proveedor2.setNomProveedor("Angelica");
+		proveedor2.setMarca("Coca-Cola");
+		proveedor2.setTipo("Bebidas");
+		proveedor2.setCosto(1810.11);
+		proveedorRepository.save(proveedor2);
+		
+		Proveedor proveedor3 = new Proveedor();
+		proveedor3.setNomProveedor("Ernesto");
+		proveedor3.setMarca("Patito");
+		proveedor3.setTipo("Productos de limpieza");
+		proveedor3.setCosto(2455.80);
+		proveedorRepository.save(proveedor3);
+		
+		// Registro Sugerencias 
+		
+		Sugerencia sugerencia= new Sugerencia();
+		sugerencia.setIdSugeregncia(1);
+		sugerencia.setNombre("Pedro");
+		sugerencia.setSugerencia("Pollo Frito");
+		sugerenciaRepository.save(sugerencia);
+		
+		Sugerencia sugerencia1= new Sugerencia();
+		sugerencia1.setIdSugeregncia(2);
+		sugerencia1.setNombre("Miriam");
+		sugerencia1.setSugerencia("Sopes");
+		sugerenciaRepository.save(sugerencia1);
+		
+		Sugerencia sugerencia2= new Sugerencia();
+		sugerencia2.setIdSugeregncia(3);
+		sugerencia2.setNombre("Rebeca");
+		sugerencia2.setSugerencia("Tamales Oaxaqueños");
+		sugerenciaRepository.save(sugerencia2);
 	}
+	
 }
