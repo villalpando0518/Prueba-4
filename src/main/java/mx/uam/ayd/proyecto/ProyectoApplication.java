@@ -22,7 +22,7 @@ import mx.uam.ayd.proyecto.presentacion.registrarOrden.ControlRegistrarOrden;
 import mx.uam.ayd.proyecto.presentacion.ventasMenu.ControlVentasMenu;
 
 /**
- * @author Anonimux Corporation
+ * @author Panther Zone
  *
  */
 @SpringBootApplication
@@ -54,6 +54,9 @@ public class ProyectoApplication {
 	
 	@Autowired 
 	MenuRepository menuRepository;
+	
+	@Autowired
+	ProveedorRepository proveedorRepository;
 	
 	
 	/**
@@ -233,5 +236,31 @@ public class ProyectoApplication {
 		        + "Flan\n");
 		
 		menuRepository.save(menu);
+		
+		//Registro de algunos proveedores
+		
+		Proveedor proveedor1 = new Proveedor();
+		proveedor1.setNomProveedor("Aaron");
+		proveedor1.setMarca("Alpura");
+		proveedor1.setTipo("Embutidos y lacteos");
+		proveedor1.setCosto(4600);
+		proveedorRepository.save(proveedor1);
+		
+		Proveedor proveedor2 = new Proveedor();
+		proveedor2.setNomProveedor("Angelica");
+		proveedor2.setMarca("Coca-Cola");
+		proveedor2.setTipo("Bebidas");
+		proveedor2.setCosto(1810.11);
+		proveedorRepository.save(proveedor2);
+		
+		Proveedor proveedor3 = new Proveedor();
+		proveedor3.setNomProveedor("Ernesto");
+		proveedor3.setMarca("Patito");
+		proveedor3.setTipo("Productos de limpieza");
+		proveedor3.setCosto(2455.80);
+		proveedorRepository.save(proveedor3);
+		
+		
 	}
+	
 }

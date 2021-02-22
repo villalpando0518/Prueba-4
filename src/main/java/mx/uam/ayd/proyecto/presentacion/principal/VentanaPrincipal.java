@@ -42,7 +42,7 @@ public class VentanaPrincipal {
 		 */
 		ventPrincipal = new JFrame();
 		ventPrincipal.setTitle("Vista Principal");
-		ventPrincipal.setBounds(100, 100, 516, 323);
+		ventPrincipal.setBounds(100, 100, 563, 460);
 		ventPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventPrincipal.getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -190,7 +190,16 @@ public class VentanaPrincipal {
 			}
 		});
 		vistasGridLay.add(Insumos);
-	
+		
+		JButton btnProveedores = new JButton("Proveedores");
+		btnProveedores.setIcon(new ImageIcon("iconos/proveedor.png"));
+		btnProveedores.setIconTextGap(50);
+		btnProveedores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				control.Proveedores();
+			}
+		});
+		vistasGridLay.add(btnProveedores);
 	
 	}
 		
