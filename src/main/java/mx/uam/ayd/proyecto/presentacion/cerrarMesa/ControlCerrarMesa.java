@@ -3,6 +3,8 @@ package mx.uam.ayd.proyecto.presentacion.cerrarMesa;
 import java.sql.Timestamp;
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +28,7 @@ public class ControlCerrarMesa {
 	@Autowired
 	private ControlMesas controlMesas;
 	
+	private VentanaOpago Opago;
 
 	/**
 	 * Muestra la ventanaCerrarMesa e inicia sus atributos de clase con los parámetros dados.
@@ -93,6 +96,15 @@ public class ControlCerrarMesa {
 
 	public void cerrarDisabled() {
 		ventanaCerrarMesa.cerrarDisabled();
+	}
+	
+	public void iniciaOP() {
+		//System.out.println("aqui estoy");
+		Opago.muestra(this);
+		//Opago.
+		JOptionPane.showMessageDialog(null, "EStamos aqui ");
+		
+		
 	}
 
 }
