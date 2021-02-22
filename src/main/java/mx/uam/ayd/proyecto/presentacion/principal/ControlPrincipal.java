@@ -70,8 +70,6 @@ public class ControlPrincipal {
 
 		ventana.muestra(this);
 		
-		//yo
-		
 		controlRecordatorios.inicia();
 		
 	}

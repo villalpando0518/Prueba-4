@@ -66,97 +66,88 @@ public class VentanaRegistrarOrden {
 		JPanel panelCentro = new JPanel();
 		frmMenu.getContentPane().add(panelCentro, BorderLayout.CENTER);
 		panelCentro.setLayout(new GridLayout(0, 2, 0, 0));
-		
-		/*
-		 * Se agregan todos los JLabel y JSpinner que se utilizan en la ventana para la interacción con el usuario.
-		 */
-		JLabel lblNewLabel = new JLabel("NumComensales");
-		panelCentro.add(lblNewLabel);
-		
-		JSpinner spinner = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
-		panelCentro.add(spinner);
-		listaSpinner.add(0, spinner);
-		menuCompleto.add(0,"NumComensales");
+		//listaSpinner.add(0, null);
+		//menuCompleto.add(0,"NumComensales");
 		
 	    JLabel lblNewLabel_1 = new JLabel("Menú del día");
 		panelCentro.add(lblNewLabel_1);
 		
 		JSpinner spinner_1 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_1);
-		listaSpinner.add(1, spinner_1);
-		menuCompleto.add(1,"Menú del día");
+		listaSpinner.add(0, spinner_1);
+		menuCompleto.add(0,"Menú del día");
 		
 		JLabel lblNewLabel_2 = new JLabel("Consome");
 		panelCentro.add(lblNewLabel_2);
 		
 		JSpinner spinner_2 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_2);
-		listaSpinner.add(2, spinner_2);
-		menuCompleto.add(2,"Consome");
+		listaSpinner.add(1, spinner_2);
+		menuCompleto.add(1,"Consome");
 		
 		JLabel lblNewLabel_3 = new JLabel("Arroz");
 		panelCentro.add(lblNewLabel_3);
 		
 		JSpinner spinner_3 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_3);
-		listaSpinner.add(3, spinner_3);
-		menuCompleto.add(3,"Arroz");
+		listaSpinner.add(2, spinner_3);
+		menuCompleto.add(2,"Arroz");
 		
 		JLabel lblNewLabel_4 = new JLabel("Pasta");
 		panelCentro.add(lblNewLabel_4);
 		
 		JSpinner spinner_4 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_4);
-		listaSpinner.add(4, spinner_4);
-		menuCompleto.add(4,"Pasta");
+		listaSpinner.add(3, spinner_4);
+		menuCompleto.add(3,"Pasta");
 		
 		JLabel lblNewLabel_5 = new JLabel("Taco Azteca");
 		panelCentro.add(lblNewLabel_5);
 		
 		JSpinner spinner_5 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_5);
-		listaSpinner.add(5, spinner_5);
-		menuCompleto.add(5,"Taco Azteca");
+		listaSpinner.add(4, spinner_5);
+		menuCompleto.add(4,"Taco Azteca");
 		
 		JLabel lblNewLabel_6 = new JLabel("Filete empanizado");
 		panelCentro.add(lblNewLabel_6);
 		
 		JSpinner spinner_6 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_6);
-		listaSpinner.add(6, spinner_6);
-		menuCompleto.add(6,"Filete empanizado");
+		listaSpinner.add(5, spinner_6);
+		menuCompleto.add(5,"Filete empanizado");
 		
 		JLabel lblNewLabel_7 = new JLabel("Chile relleno");
 		panelCentro.add(lblNewLabel_7);
 		
 		JSpinner spinner_7 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_7);
-		listaSpinner.add(7, spinner_7);
-		menuCompleto.add(7,"Chile relleno");
+		listaSpinner.add(6, spinner_7);
+		menuCompleto.add(6,"Chile relleno");
 		
 		JLabel lblNewLabel_8 = new JLabel("Carne de Res");
 		panelCentro.add(lblNewLabel_8);
 		
 		JSpinner spinner_8 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_8);
-		listaSpinner.add(8, spinner_8);
-		menuCompleto.add(8,"Carne de Res");
+		listaSpinner.add(7, spinner_8);
+		menuCompleto.add(7,"Carne de Res");
 		
 		JLabel lblNewLabel_9 = new JLabel("Enchiladas");
 		panelCentro.add(lblNewLabel_9);
 		
 		JSpinner spinner_9 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_9);
-		listaSpinner.add(9, spinner_9);
-		menuCompleto.add(9,"Enchiladas");
+		listaSpinner.add(8, spinner_9);
+		menuCompleto.add(8,"Enchiladas");
 		
 		JLabel lblNewLabel_10 = new JLabel("Gelatina");
 		panelCentro.add(lblNewLabel_10);
 		
 		JSpinner spinner_10 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_10);
-		listaSpinner.add(10, spinner_10);
-		menuCompleto.add(10,"Gelatina");
+		listaSpinner.add(9, spinner_10);
+		menuCompleto.add(9,"Gelatina");
 		
 		JLabel lblNewLabel_11 = new JLabel("Flan");
 		panelCentro.add(lblNewLabel_11);
@@ -164,7 +155,7 @@ public class VentanaRegistrarOrden {
 		JSpinner spinner_11 = new JSpinner(new SpinnerNumberModel(0, 0, 10, 1));
 		panelCentro.add(spinner_11);
 		listaSpinner.add(10, spinner_11);
-		menuCompleto.add(11,"Flan");
+		menuCompleto.add(10,"Flan");
 		
 		
 		/*

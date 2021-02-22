@@ -1,11 +1,8 @@
 package mx.uam.ayd.proyecto.presentacion.empleados;
 
-import java.awt.BorderLayout;
 import java.util.List;
-import java.awt.FlowLayout;
 
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -16,15 +13,11 @@ import javax.swing.table.DefaultTableModel;
 import org.springframework.stereotype.Component;
 
 import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
-import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
-import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.VentanaRegistrarEmpleado;
 
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Font;
 
 @Component
 public class VentanaEmpleados extends JFrame {

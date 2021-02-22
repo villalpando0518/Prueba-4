@@ -20,7 +20,10 @@ public class ControlRecordatorio {
 	
 	public void inicia() {
 		Recordatorio r = servicio.recupera();
-		ventana.muestra(this,r);
+		if(r!=null) {
+			if(r.getInfo()!=null)
+			ventana.muestra(this,r);
+		}
 	}
 	
 	public void iniciaNuevo() {

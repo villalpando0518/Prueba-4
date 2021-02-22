@@ -64,7 +64,7 @@ public class VentanaMesas {
 		frmMesasFondaSocorrito.getContentPane().add(panelNorte, BorderLayout.NORTH);
 		panelNorte.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		comboBoxOpciones.addItem("...");
+		//comboBoxOpciones.addItem("...");
 		comboBoxOpciones.addItem("Registrar Pedido (1)");
 		comboBoxOpciones.addItem("Ver ordenes (2)");
 		comboBoxOpciones.addItem("Cerrar mesa (3)");
@@ -200,7 +200,7 @@ public class VentanaMesas {
 	public void muestra(ControlMesas controlMesas) {
 		this.controlMesas = controlMesas;
 		frmMesasFondaSocorrito.setVisible(true);
-		this.flagCombo = 0;
+		this.flagCombo = 1;
 		comboBoxOpciones.setSelectedIndex(0);
 		comboBoxOpciones.addActionListener(new ActionListener() {
 			   @Override

@@ -148,7 +148,6 @@ public class ProyectoApplication {
 		productoRepository.save(producto4);
 		
 		//Registro de recordatorio
-		
 		Recordatorio recordatorio = new Recordatorio();
 		recordatorio.setId(1);
 		recordatorio.setInfo("1. A partir de mañana se empezará a ofrecer los \n"
@@ -158,6 +157,7 @@ public class ProyectoApplication {
 				+ "registrarse.");
 		recordatorioRepository.save(recordatorio);
 		
+		//Registro empleados
 		Empleado empleado1 = new Empleado();
 		empleado1.setNombre("Paola");
 		empleado1.setApellidos("Aguillón");
@@ -189,8 +189,8 @@ public class ProyectoApplication {
 		empleado4.setSueldo(3560.60);
 		empleado4.setOcupacion("Chef");
 		empleadoRepository.save(empleado4);
-		//Registro Ventas de menú
 		
+		//Registro Ventas de menú
 		VentasMenu dia1 = new VentasMenu();
 		dia1.setFecha(LocalDate.of(2021,02,01));
 		dia1.setMenu("Tacos,Sopa de papa, Agua de limón");
@@ -218,7 +218,6 @@ public class ProyectoApplication {
 		
 		
 		//Registro de menú
-		
 		Menu menu = new Menu();
 		menu.setId(1);
 		menu.setMen("Sopa \n"
@@ -231,7 +230,6 @@ public class ProyectoApplication {
 		        + "Enchiladas\n"
 		        + "Gelatina\n"
 		        + "Flan\n");
-		
 		menuRepository.save(menu);
 	}
 }

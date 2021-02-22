@@ -11,7 +11,6 @@ import javax.swing.border.EmptyBorder;
 import org.springframework.stereotype.Component;
 
 import mx.uam.ayd.proyecto.negocio.modelo.Menu;
-import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.Font;

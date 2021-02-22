@@ -23,8 +23,6 @@ import javax.swing.JTable;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 
 /**
