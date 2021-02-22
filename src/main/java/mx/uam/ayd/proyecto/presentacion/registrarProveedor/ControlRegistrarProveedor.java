@@ -48,7 +48,7 @@ public class ControlRegistrarProveedor {
 		termina();
 	}
 	
-	public void actualizaVentanaEmpleados() {
+	public void actualizaVentanaProveedores() {
 		controlProveedores.actualizaVentanaProveedores();
 	}
 	
