@@ -19,6 +19,12 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * 
+ * Muestra la ventana de empleados con una tabla que contiene la
+ * información completa de cada cliente.
+ * @author Panther Zone
+ */
 @Component
 public class VentanaEmpleados extends JFrame {
 
@@ -31,37 +37,20 @@ public class VentanaEmpleados extends JFrame {
 	     return false; 
 	    } 
 	};
-	
-	private JTextField textnombre;
-	private JTextField textapellidos;
-	private JTextField textedad;
-	private JTextField textsueldo;
-	private JTextField textocupacion;
 
 	private ControlEmpleados controlEmpleados;
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		try {
-			VentanaRegistrarEmpleado dialog = new VentanaRegistrarEmpleado();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}/*
-
-	/**
-	 * Create the dialog.
-	 */
 	
-	
+	/**
+	 * VentanaEmpleados: Permite inicializar la ventana
+	 */
 	public VentanaEmpleados() {
 		this.contentPane = new JPanel();
 		initialize();
 	}
 	
+	/**
+	 * initialize: Permite inicializar los componentes de la ventana
+	 */
 	private void initialize() {
 		setTitle("Empleados");
 		setBounds(100, 100, 450, 300);
@@ -101,38 +90,50 @@ public class VentanaEmpleados extends JFrame {
 		
 		scrollPane.setViewportView(table);
 	}
-	
-	
-				public void muestra(ControlEmpleados control, List <Empleado> empleados) {
-					this.controlEmpleados = control;
-					modelo.setRowCount(0);
-					for(Empleado empleado:empleados) {
-						modelo.addRow(new Object[] {empleado.getIdEmp(), empleado.getNombre(), empleado.getApellidos(),
-						empleado.getEdad(), empleado.getSueldo(), empleado.getOcupacion()});
-						table.setModel(modelo);
-						}
-					setVisible(true);
-					}
-				
-				public void registrarEmpleado() {
-					controlEmpleados.registrar();
-				}
-				
-				public void muestraDialogoConMensaje(String mensaje ) {
-					JOptionPane.showMessageDialog(this , mensaje);
-				}
-				
-				public void actualizaEmpleados(ControlEmpleados control, List <Empleado> empleados) {
-					this.controlEmpleados = control;
-					modelo.setRowCount(0);
-					for(Empleado empleado:empleados) {
-						modelo.addRow(new Object[] {empleado.getIdEmp(), empleado.getNombre(), empleado.getApellidos(), empleado.getEdad(),
-						empleado.getSueldo(), empleado.getOcupacion()});
-						table.setModel(modelo);
-					}
+		/**
+		 * muestra:  Recibe del controlador una lista de empleados para mostrarlos en la ventana
+		 * @param control
+		 * @param empleados
+		 */
+		public void muestra(ControlEmpleados control, List <Empleado> empleados) {
+			this.controlEmpleados = control;
+			modelo.setRowCount(0);
+			for(Empleado empleado:empleados) {
+				modelo.addRow(new Object[] {empleado.getIdEmp(), empleado.getNombre(), empleado.getApellidos(),
+				empleado.getEdad(), empleado.getSueldo(), empleado.getOcupacion()});
+				table.setModel(modelo);
+			}
+			setVisible(true);
+		}
+		/**
+		 * registrarEmpleado: Controla la ventana para agregar a un empleado
+		 */
+		public void registrarEmpleado() {
+			controlEmpleados.registrar();
+		}
+		/**
+		 * muestraDialogoConMensaje: Muestra un dialogo cuando el empleado se agrego exitosamente
+		 * @param mensaje
+		 */
+		public void muestraDialogoConMensaje(String mensaje ) {
+			JOptionPane.showMessageDialog(this , mensaje);
+		}
+		/**
+		 * actualizaEmpleados: permite actualiza la información de la lista de los empleados
+		 * @param control
+		 * @param empleados
+		 */
+		public void actualizaEmpleados(ControlEmpleados control, List <Empleado> empleados) {
+			this.controlEmpleados = control;
+			modelo.setRowCount(0);
+			for(Empleado empleado:empleados) {
+				modelo.addRow(new Object[] {empleado.getIdEmp(), empleado.getNombre(), empleado.getApellidos(), empleado.getEdad(),
+				empleado.getSueldo(), empleado.getOcupacion()});
+				table.setModel(modelo);
+			}
 					
-				setVisible(true);
-				}
+			setVisible(true);
+		}
 }
 
 

@@ -12,6 +12,7 @@ public class Cliente {
 	 private int idCliente;
 	 private String nombreCliente;
 	 private String correo;
+	 private String promocion; 
 	 
 	 //Constructor por defecto
 	 public Cliente() {
@@ -19,9 +20,10 @@ public class Cliente {
 	 }
 	
 	 //Constructor con parametros
-	public Cliente(String nombre, String correo) {
+	public Cliente(String nombre, String correo, String promocion) {
 		this.nombreCliente = nombre;
 		this.correo = correo;
+		this.promocion = promocion;
 	}
 	
 	//Métodos get/set
@@ -49,5 +51,11 @@ public class Cliente {
 		this.correo = correo;
 	}
 	
-
+	public String getPromocion() {
+		return promocion;
+	}
+	
+	public void setPromocion(String promocion) {
+		this.promocion = promocion;
+	}
 }

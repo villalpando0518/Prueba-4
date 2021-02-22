@@ -138,6 +138,7 @@ public class VentanaPrincipal {
 		
 		JButton Empleados = new JButton("Empleados");
 		//Empleados.setIcon(new ImageIcon("iconos/Empleado.png"));
+		Empleados.setIconTextGap(50);
 		Empleados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				control.Empleados();
@@ -153,15 +154,21 @@ public class VentanaPrincipal {
 		});
 		vistasGridLay.add(Recordatorios);
 		
+ Paola_A
+		JButton Clientes = new JButton("Clientes");
+		//ClientesFrec.setIcon(new ImageIcon("cliente.png"));
+		Clientes.setIconTextGap(50);
+		Clientes.addActionListener(new ActionListener() {
+=======
 		JButton ClientesFrec = new JButton("Registrar Cliente");
 		ClientesFrec.setIcon(new ImageIcon("cliente.png"));
 		ClientesFrec.setIconTextGap(50);
-		ClientesFrec.addActionListener(new ActionListener() {
+		ClientesFrec.addActionListener(new ActionListener() { master
 			public void actionPerformed(ActionEvent e) {
-				control.agregarCliente();
+				control.Clientes();
 			}
 		});
-		vistasGridLay.add(ClientesFrec);
+		vistasGridLay.add(Clientes);
 		
 		JButton Menus = new JButton("Menus");
 		Menus.addActionListener(new ActionListener() {

@@ -3,6 +3,7 @@ package mx.uam.ayd.proyecto.presentacion.principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import mx.uam.ayd.proyecto.presentacion.caja.ControlCorteCaja;
+import mx.uam.ayd.proyecto.presentacion.clientes.ControlClientes;
 import mx.uam.ayd.proyecto.presentacion.cocina.ControlCocina;
 import mx.uam.ayd.proyecto.presentacion.empleados.ControlEmpleados;
 import mx.uam.ayd.proyecto.presentacion.informeInventario.ControlInformeInventario;
@@ -12,10 +13,12 @@ import mx.uam.ayd.proyecto.presentacion.mesas.ControlMesas;
 import mx.uam.ayd.proyecto.presentacion.proveedores.ControlProveedores;
 import mx.uam.ayd.proyecto.presentacion.realizarPedido.ControlRealizarPedido;
 import mx.uam.ayd.proyecto.presentacion.recordatorios.ControlRecordatorio;
+ Paola_A
 import mx.uam.ayd.proyecto.presentacion.registrarEmpleado.ControlRegistrarEmpleado;
 import mx.uam.ayd.proyecto.presentacion.sugerenciaMenu.ControlSugerencia;
 import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
 //import mx.uam.ayd.proyecto.presentacion.registrarCliente.ControlRegistrarCliente;
+ master
 
 /**
  * @author Anonymux Corporation
@@ -60,6 +63,9 @@ public class ControlPrincipal {
 	private ControlMenu controlMenu;
 	
 	@Autowired
+ Paola_A
+	private ControlClientes controlClientes;
+
 	private ControlRegistrarCliente controlRegistrarCliente;
 	
 	@Autowired
@@ -68,6 +74,7 @@ public class ControlPrincipal {
 
 	private ControlSugerencia controlSugerencia;
   
+ master
   
 	//@Autowired
 	//private ControlRegistrarCliente controlRegistrarCliente;
@@ -138,11 +145,14 @@ public class ControlPrincipal {
 	public void Empleados() {
 		controlEmpleados.inicia();
 	}
-	/*
-	public void agregarCliente() {
+	
+	/*public void agregarCliente() {
 		controlRegistrarCliente.inicia();
+	}*/
+	public void Clientes() {
+		controlClientes.inicia();
 	}
-	*/
+	
 	public void agregarRecordatorio() {
 		controlRecordatorios.iniciaNuevo();
 	}
@@ -151,6 +161,9 @@ public class ControlPrincipal {
 		controlMenu.iniciaNuevo();
 	}
 	
+ Paola_A
+
+=======
 	public void agregarCliente() {
 		controlRegistrarCliente.inicia();
 	}
@@ -163,4 +176,5 @@ public class ControlPrincipal {
 		controlSugerencia.inicia();
   
 	}
+ master
 }
